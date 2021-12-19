@@ -10,6 +10,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const mongoose_1 = __importDefault(require("mongoose"));
+require("dotenv/config");
 mongoose_1.default.Promise = global.Promise;
 const dbUrl = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 mongoose_1.default.connect(dbUrl, { useCreateIndex: true, useNewUrlParser: true })
