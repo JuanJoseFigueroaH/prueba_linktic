@@ -9,6 +9,8 @@ class CategoriaController extends BaseController {
     next: NextFunction
   ) => {
     req.body.nombre = req.body.nombre.toUpperCase();
+    req.body.descripcion = req.body.descripcion.toUpperCase();
+
     const newCategoria = await this.db.categoriaModel.create(req.body);
     res.status(201).send({ data: newCategoria, message: 'Registro Creado Correctamente' });
   };
@@ -24,6 +26,7 @@ class CategoriaController extends BaseController {
       throw new NotFoundError();
     }
 
+    req.body.nombre = req.body.nombre.toUpperCase();
     req.body.descripcion = req.body.descripcion.toUpperCase();
 
     const categoriaUpdated = await this.db.categoriaModel.findByIdAndUpdate({ _id: parseInt(id) }, req.body)

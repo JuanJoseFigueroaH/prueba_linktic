@@ -1,6 +1,11 @@
 import { Router } from 'express';
+import ProductoController from '../controllers/producto.controller';
+import ProductoValidator from '../validators/producto.validator';
+import { validateRequest } from '../middlewares';
 
 const productoRoute = Router();
+const productoController = new ProductoController();
+const productoValidator = new ProductoValidator();
 
 /**
  * @swagger
@@ -51,7 +56,11 @@ const productoRoute = Router();
  *           }
  */
 productoRoute.post(
-  '/create'
+  '/create',
+  productoValidator.validateFields,
+  validateRequest,
+  productoValidator.valifateIfProductInExists,
+  productoController.create
 );
 
 /**
@@ -88,7 +97,8 @@ productoRoute.post(
  *           }
  */
 productoRoute.get(
-  '/'
+  '/',
+  productoController.getAll
 );
 
 /**
@@ -130,7 +140,9 @@ productoRoute.get(
  *           }
  */
 productoRoute.get(
-  '/filter/name-category/:philter'
+  '/filter/name-category/:philter',
+  productoValidator.paramPhilterValidator,
+  productoController.getNameCategory
 );
 
 /**
@@ -188,7 +200,11 @@ productoRoute.get(
  *           }
  */
 productoRoute.put(
-  'modify/:id'
+  'modify/:id',
+  productoValidator.updateFields,
+  productoValidator.paramIdValidator,
+  validateRequest,
+  productoController.update
 );
 
 /**
@@ -229,8 +245,9 @@ productoRoute.put(
  *              ],
  *           }
  */
-productoRoute.get(
-  '/delete/:id'
+productoRoute.delete(
+  '/delete',
+  productoController.deleted
 );
 
 export default productoRoute;

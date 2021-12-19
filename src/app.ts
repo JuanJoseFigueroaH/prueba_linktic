@@ -74,7 +74,7 @@ app.use(
   swaggerUi.setup(swaggerDocs)
 );
 
-app.use('/api', mainRoute);
+app.use('/api/v1', mainRoute);
 
 app.use(errorHandler);
 
