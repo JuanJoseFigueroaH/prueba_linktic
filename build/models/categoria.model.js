@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const categoriaSchema = new mongoose_1.Schema({
     nombre: { type: String, maxlength: 50, unique: true, required: true },
-    descripcion: { type: String, maxlength: 255, required: true },
+    descripcion: { type: String, maxlength: 255 },
     created_at: { type: Date, default: Date.now }
 });
 const categoriaModel = mongoose_1.default.model('categoria', categoriaSchema);
