@@ -1,5 +1,11 @@
 import { Router } from 'express';
+import CategoriaController from '../controllers/categoria.controller';
+import CategoriaValidator from '../validators/categoria.validator';
+import { validateRequest } from '../middlewares';
+
 const categoriaRoute = Router();
+const categoriaController = new CategoriaController();
+const categoriaValidator = new CategoriaValidator();
 
 /**
  * @swagger
@@ -41,7 +47,11 @@ const categoriaRoute = Router();
  *           }
  */
 categoriaRoute.post(
-  '/create'
+  '/create',
+  categoriaValidator.validateFields,
+  validateRequest,
+  categoriaValidator.valifateIfCategoryExists,
+  categoriaController.create
 );
 
 /**
@@ -86,7 +96,10 @@ categoriaRoute.post(
  *           }
  */
 categoriaRoute.put(
-  'modify/:id'
+  'modify/:id',
+  categoriaValidator.updateFields,
+  validateRequest,
+  categoriaController.update
 );
 
 export default categoriaRoute;
