@@ -27,7 +27,6 @@ const categoriaRoute = Router();
  *              "nombre": "Lapices",
  *              "descripcion": "Lapices para escuela",
  *              "created_at": "2021-12-19T01:07:31.210Z",
- *              "updated_at": "2021-12-19T01:10:30.126Z"
  *           }
  *       400:
  *         description: bad request
@@ -73,7 +72,6 @@ categoriaRoute.post(
  *              "nombre": "Lapices",
  *              "descripcion": "Lapices para escuela",
  *              "created_at": "2021-12-19T01:07:31.210Z",
- *              "updated_at": "2021-12-19T01:10:30.126Z"
  *           }
  *       400:
  *         description: bad request

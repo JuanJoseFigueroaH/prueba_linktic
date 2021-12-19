@@ -18,6 +18,7 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
     }
     try {
         app_1.app.listen(PORT, () => {
+            console.log(`Swagger route: http://localhost:${PORT}/swagger`);
             console.log(`listen on port: ${PORT} backend`);
         });
     }

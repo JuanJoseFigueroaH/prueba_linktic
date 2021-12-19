@@ -37,7 +37,6 @@ const productoRoute = Router();
  *              "precio": "1200",
  *              "categoria": 606c8c24a4179839540ab168,
  *              "created_at": "2021-12-19T01:07:31.210Z",
- *              "updated_at": "2021-12-19T01:10:30.126Z"
  *           }
  *       400:
  *         description: bad request
@@ -74,7 +73,6 @@ productoRoute.post(
  *              "precio": "1200",
  *              "categoria": 606c8c24a4179839540ab168,
  *              "created_at": "2021-12-19T01:07:31.210Z",
- *              "updated_at": "2021-12-19T01:10:30.126Z"
  *           }
  *       404:
  *         schema:
@@ -117,7 +115,6 @@ productoRoute.get(
  *              "precio": "1200",
  *              "categoria": 606c8c24a4179839540ab168,
  *              "created_at": "2021-12-19T01:07:31.210Z",
- *              "updated_at": "2021-12-19T01:10:30.126Z"
  *           }
  *       404:
  *         schema:
@@ -177,7 +174,6 @@ productoRoute.get(
  *              "precio": "1200",
  *              "categoria": 606c8c24a4179839540ab168,
  *              "created_at": "2021-12-19T01:07:31.210Z",
- *              "updated_at": "2021-12-19T01:10:30.126Z"
  *           }
  *       400:
  *         description: bad request
@@ -219,7 +215,6 @@ productoRoute.put(
  *              "precio": "1200",
  *              "categoria": 606c8c24a4179839540ab168,
  *              "created_at": "2021-12-19T01:07:31.210Z",
- *              "updated_at": "2021-12-19T01:10:30.126Z"
  *           }
  *       404:
  *         schema:
