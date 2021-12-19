@@ -65,7 +65,7 @@ app.get('/swagger.json', function (req, res) {
     res.send(swaggerDocs);
 });
 app.use('/swagger', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocs));
-app.use('/api', _main_route_1.default);
+app.use('/api/v1', _main_route_1.default);
 app.use(middlewares_1.errorHandler);
 app.all('*', (req, res) => {
     throw new errors_1.NotFoundError();

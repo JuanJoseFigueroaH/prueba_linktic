@@ -19,6 +19,7 @@ class CategoriaController extends _base_controller_1.default {
         super(...arguments);
         this.create = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             req.body.nombre = req.body.nombre.toUpperCase();
+            req.body.descripcion = req.body.descripcion.toUpperCase();
             const newCategoria = yield this.db.categoriaModel.create(req.body);
             res.status(201).send({ data: newCategoria, message: 'Registro Creado Correctamente' });
         });
@@ -28,6 +29,7 @@ class CategoriaController extends _base_controller_1.default {
             if (!categoriaFound) {
                 throw new not_found_error_1.NotFoundError();
             }
+            req.body.nombre = req.body.nombre.toUpperCase();
             req.body.descripcion = req.body.descripcion.toUpperCase();
             const categoriaUpdated = yield this.db.categoriaModel.findByIdAndUpdate({ _id: parseInt(id) }, req.body);
             res.status(201).send({ data: categoriaUpdated, message: 'Registro Modificado Correctamente' });

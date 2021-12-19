@@ -16,6 +16,10 @@ Iniciar aplicación modo development
 npm run dev
 ```
 
+```bash
+Crear una base de datos con el nombre asignado en el archivo .env
+```
+
 ## Estructura Proyecto
 
 
@@ -57,3 +61,4 @@ En cada ruta de la carpeta src/routes se debe llenar la documentación con JsDoc
 providersCatalogRoute.patch('/:id', providersCatalogController.editOne)
 ```
 Please make sure to update tests as appropriate.
+
