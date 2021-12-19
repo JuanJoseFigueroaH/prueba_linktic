@@ -5,7 +5,6 @@ const start = async () => {
   if (!PORT) {
     throw new Error('Port must be defined')
   }
-  console.log(process.env.NODE_ENV)
   try {
     app.listen(PORT, () => {
       console.log(`listen on port: ${PORT} backend`)

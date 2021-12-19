@@ -3,6 +3,14 @@ import 'express-async-errors';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
+import mongoose from 'mongoose';
+
+// Conexión a la base de datos MongoDB
+mongoose.Promise = global.Promise;
+const dbUrl = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
+mongoose.connect(dbUrl, { useCreateIndex: true, useNewUrlParser: true })
+  .then(mongoose => console.log('Conectado a la BD en el puerto 27017'))
+  .catch(err => console.log(err));
 
 const app = express();
 // middleware
