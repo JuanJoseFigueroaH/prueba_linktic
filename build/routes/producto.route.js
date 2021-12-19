@@ -4,6 +4,7 @@ const express_1 = require("express");
 const productoRoute = express_1.Router();
 productoRoute.post('/create');
 productoRoute.get('/');
-productoRoute.get('/filter/name-category');
+productoRoute.get('/filter/name-category/:philter');
+productoRoute.put('modify/:id');
 exports.default = productoRoute;
 //# sourceMappingURL=producto.route.js.map

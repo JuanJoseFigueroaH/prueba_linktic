@@ -195,4 +195,47 @@ productoRoute.put(
   'modify/:id'
 );
 
+/**
+ * @swagger
+ * /producto/delete/{id}:
+ *  delete:
+ *    description: "Eliminar un producto"
+ *    tags:
+ *      - Producto
+ *    security:
+ *      - bearerAuth: []
+ *    parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        type: number
+ *    responses:
+ *       200:
+ *         examples:
+ *           application/json: {
+ *              "_id": 606c8c02a4179839540ab167,
+ *              "nombre": "Lapiz borrable",
+ *              "descripcion": "Lapiz para niños",
+ *              "precio": "1200",
+ *              "municipio": 606c8c24a4179839540ab168,
+ *              "created_at": "2021-12-19T01:07:31.210Z",
+ *              "updated_at": "2021-12-19T01:10:30.126Z"
+ *           }
+ *       404:
+ *         schema:
+ *           type: object
+ *           properties:
+ *             errors:
+ *               type: object
+ *         examples:
+ *           application/json: {
+ *             "errors": [
+ *                  "message": "Not Found"
+ *              ],
+ *           }
+ */
+productoRoute.get(
+  '/delete/:id'
+);
+
 export default productoRoute;
