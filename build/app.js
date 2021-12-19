@@ -32,12 +32,23 @@ const swaggerDocs = swagger_jsdoc_1.default({
             },
             servers: [
                 {
-                    url: 'http://localhost:3001/',
+                    url: 'http://localhost:3000/',
                     name: 'test'
                 }
             ]
         },
-        basePath: '/api'
+        basePath: '/api/v1',
+        securityDefinitions: {
+            bearerAuth: {
+                type: 'apiKey',
+                in: 'header',
+                name: 'Authorization',
+                scheme: 'Bearer',
+                description: 'For accessing the API a valid JWT token must be passed in all the queries in the Authorization header.' +
+                    'The following syntax must be used in the Authorization header :' +
+                    'Bearer xxxxxx.yyyyyyy.zzzzzz'
+            }
+        }
     },
     apis: ['src/routes/*.ts']
 });
