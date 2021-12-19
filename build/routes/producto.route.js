@@ -6,5 +6,6 @@ productoRoute.post('/create');
 productoRoute.get('/');
 productoRoute.get('/filter/name-category/:philter');
 productoRoute.put('modify/:id');
+productoRoute.get('/delete/:id');
 exports.default = productoRoute;
 //# sourceMappingURL=producto.route.js.map

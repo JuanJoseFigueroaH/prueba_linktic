@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
+import 'dotenv/config';
 
 // Conexión a la base de datos MongoDB
 mongoose.Promise = global.Promise;
