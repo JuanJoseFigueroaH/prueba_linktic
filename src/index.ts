@@ -8,6 +8,7 @@ const start = async () => {
   }
   try {
     app.listen(PORT, () => {
+      console.log(`Swagger route: http://localhost:${PORT}/swagger`)
       console.log(`listen on port: ${PORT} backend`)
     })
   } catch (error) {
